@@ -471,3 +471,30 @@ header{
     }
 
 }
+.nav-links{
+    display:none !important;
+}
+
+.nav-links.active{
+    display:flex !important;
+    position:absolute;
+    top:80px;
+    right:20px;
+    width:280px;
+    flex-direction:column;
+    gap:10px;
+    padding:20px;
+    margin:0;
+    list-style:none;
+    background:#0A0E18;
+    border-radius:15px;
+    z-index:99999;
+}
+
+.menu-toggle{
+    display:block !important;
+    color:white;
+    cursor:pointer;
+    position:relative;
+    z-index:100000;
+}
