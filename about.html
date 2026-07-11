@@ -2,164 +2,261 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Gaming World</title>
 
-<title>About Us | Gaming World</title>
+    <meta name="description"
+          content="Learn more about Gaming World, our mission, and our passion for gaming.">
 
-<meta name="description"
-content="Learn more about Gaming World, our mission, and our passion for gaming.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=23">
+    <link rel="stylesheet" href="css/navbar.css?v=23">
+    <link rel="stylesheet" href="css/cards.css?v=23">
 
-<link rel="stylesheet" href="css/style.css?v=23">
-<link rel="stylesheet" href="css/navbar.css?v=23">
-<link rel="stylesheet" href="css/cards.css?v=23">
+    <style>
+        .about-page{
+            min-height:100vh;
+            padding:150px 20px 90px;
+        }
 
+        .about-container{
+            width:min(950px, 100%);
+            margin:auto;
+            padding:45px;
+            background:rgba(255,255,255,.04);
+            border:1px solid rgba(255,255,255,.08);
+            border-radius:24px;
+            box-shadow:0 25px 60px rgba(0,0,0,.35);
+        }
+
+        .about-label{
+            color:#8B5CF6;
+            font-family:'Poppins',sans-serif;
+            font-size:13px;
+            font-weight:700;
+            letter-spacing:2px;
+            margin-bottom:12px;
+        }
+
+        .about-container h1{
+            margin:0 0 25px;
+            color:white;
+            font-family:'Orbitron',sans-serif;
+            font-size:44px;
+            line-height:1.2;
+        }
+
+        .about-container h1 span{
+            color:#8B5CF6;
+            text-shadow:0 0 18px rgba(139,92,246,.75);
+        }
+
+        .about-container p{
+            margin:0 0 18px;
+            color:#c8cbd3;
+            font-family:'Poppins',sans-serif;
+            font-size:16px;
+            line-height:1.9;
+        }
+
+        .about-grid{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:18px;
+            margin-top:35px;
+        }
+
+        .about-card{
+            padding:24px;
+            background:rgba(139,92,246,.08);
+            border:1px solid rgba(139,92,246,.18);
+            border-radius:18px;
+        }
+
+        .about-card h3{
+            margin:0 0 10px;
+            color:white;
+            font-family:'Orbitron',sans-serif;
+            font-size:18px;
+        }
+
+        .about-card p{
+            margin:0;
+            font-size:14px;
+            line-height:1.7;
+        }
+
+        @media(max-width:800px){
+            .about-container{
+                padding:30px;
+            }
+
+            .about-container h1{
+                font-size:34px;
+            }
+
+            .about-grid{
+                grid-template-columns:1fr;
+            }
+        }
+
+        @media(max-width:480px){
+            .about-page{
+                padding:120px 14px 60px;
+            }
+
+            .about-container{
+                padding:22px;
+            }
+
+            .about-container h1{
+                font-size:28px;
+            }
+
+            .about-container p{
+                font-size:15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
+    <nav class="navbar">
 
-<nav class="navbar">
+        <a href="index.html" class="logo">
+            Gaming<span>World</span>
+        </a>
 
-<div class="logo">
-Gaming<span>World</span>
-</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="games.html">Games</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
 
-<ul class="nav-links">
+        <div class="right-menu">
+            <a href="https://store.steampowered.com/"
+               class="download-btn"
+               target="_blank"
+               rel="noopener noreferrer">
+                Download
+            </a>
 
-<li><a href="index.html">Home</a></li>
-<li><a href="games.html">Games</a></li>
-<li><a href="news.html">News</a></li>
-<li><a href="reviews.html">Reviews</a></li>
-<li><a href="about.html">About Us</a></li>
-<li><a href="contact.html">Contact</a></li>
+            <a href="login.html" class="login-btn">
+                Login
+            </a>
+        </div>
 
-</ul>
+        <div class="menu-toggle">☰</div>
 
-<div class="right-menu">
-
-<a href="https://store.steampowered.com/"
-class="download-btn"
-target="_blank">
-Download
-</a>
-
-<a href="login.html" class="login-btn">
-Login
-</a>
-
-</div>
-
-<div class="menu-toggle">☰</div>
-
-</nav>
-
+    </nav>
 </header>
 
-<section class="featured" style="padding-top:150px;">
+<main class="about-page">
 
-<div class="featured-container">
+    <section class="about-container">
 
-<div class="featured-right" style="max-width:900px;margin:auto;">
+        <p class="about-label">WHO WE ARE</p>
 
-<h2>About Gaming World</h2>
+        <h1>About <span>Gaming World</span></h1>
 
-<p>
+        <p>
+            Gaming World is an independent gaming website created for players who enjoy
+            discovering new games, reading gaming news, and exploring useful reviews and guides.
+        </p>
 
-Gaming World is an independent gaming website created for players who enjoy
-discovering new games, reading trusted gaming news, and exploring detailed
-reviews and guides.
+        <p>
+            Our mission is to provide clear, helpful, and enjoyable gaming content for players
+            around the world. We focus on popular games, updates, reviews, guides, and gaming tips.
+        </p>
 
-</p>
+        <p>
+            We cover titles such as PUBG Mobile, Call of Duty, Minecraft, and many other games
+            across different platforms.
+        </p>
 
-<p>
+        <p>
+            Gaming World continues to grow, and we are committed to improving the website and
+            creating valuable content for every visitor.
+        </p>
 
-Our goal is to provide high-quality gaming content that helps players stay
-updated with the latest releases, updates, reviews, and gaming tips.
+        <div class="about-grid">
 
-</p>
+            <div class="about-card">
+                <h3>Our Mission</h3>
+                <p>
+                    To make gaming information simple, useful, and enjoyable for every player.
+                </p>
+            </div>
 
-<p>
+            <div class="about-card">
+                <h3>Our Content</h3>
+                <p>
+                    News, reviews, game information, guides, updates, and recommendations.
+                </p>
+            </div>
 
-We cover many popular games including PUBG Mobile, Call of Duty,
-Minecraft, and many other exciting titles from different platforms.
+            <div class="about-card">
+                <h3>Our Community</h3>
+                <p>
+                    A growing place for gamers who want to discover and enjoy better gaming content.
+                </p>
+            </div>
 
-</p>
+        </div>
 
-<p>
+    </section>
 
-Gaming World continues to grow every day, and we are committed to creating
-useful, honest, and engaging content for gamers around the world.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
+</main>
 
 <footer class="footer">
 
-<div class="footer-container">
+    <div class="footer-container">
 
-<div class="footer-logo">
+        <div class="footer-logo">
+            <h2>Gaming<span>World</span></h2>
+            <p>Your destination for gaming news, reviews and guides.</p>
+        </div>
 
-<h2>Gaming<span>World</span></h2>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </div>
 
-<p>
-Your destination for gaming news, reviews and guides.
-</p>
+        <div class="footer-links">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
 
-</div>
+    </div>
 
-<div class="footer-links">
-
-<h3>Quick Links</h3>
-
-<ul>
-
-<li><a href="index.html">Home</a></li>
-<li><a href="games.html">Games</a></li>
-<li><a href="news.html">News</a></li>
-<li><a href="reviews.html">Reviews</a></li>
-
-</ul>
-
-</div>
-
-<div class="footer-links">
-
-<h3>Legal</h3>
-
-<ul>
-
-<li><a href="about.html">About Us</a></li>
-<li><a href="privacy.html">Privacy Policy</a></li>
-<li><a href="contact.html">Contact</a></li>
-
-</ul>
-
-</div>
-
-</div>
-
-<div class="copyright">
-© 2026 Gaming World. All Rights Reserved.
-</div>
+    <div class="copyright">
+        © 2026 Gaming World. All Rights Reserved.
+    </div>
 
 </footer>
 
 <script src="js/app.js?v=23"></script>
 
 </body>
-
 </html>
