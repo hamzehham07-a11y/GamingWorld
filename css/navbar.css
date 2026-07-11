@@ -286,3 +286,52 @@ font-size:26px;
 .search-box button:hover{
     color:#8B5CF6;
 }
+/* ===== FINAL MOBILE FIX ===== */
+
+@media screen and (max-width: 992px){
+
+    .navbar{
+        display:flex !important;
+        justify-content:space-between !important;
+        align-items:center !important;
+        grid-template-columns:none !important;
+        padding:0 15px !important;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .logo{
+        font-size:20px !important;
+        flex-shrink:0;
+    }
+
+    .right-menu{
+        display:flex;
+        align-items:center;
+        justify-content:flex-end;
+        gap:8px;
+        margin-left:auto !important;
+    }
+
+    .search-box{
+        display:none !important;
+    }
+
+    .download-btn{
+        display:none !important;
+    }
+
+    .login-btn{
+        padding:8px 16px !important;
+        font-size:13px !important;
+    }
+
+    .menu-toggle{
+        display:block !important;
+        margin-left:8px;
+        font-size:28px;
+        color:white;
+    }
+}
