@@ -1,5 +1,41 @@
+/* ==========================
+   GLOBAL STYLE
+========================== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
 body{
-    background:#070B12;
-    overflow-x:hidden;
-    margin:0;
+    background: #070B12;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    color: #ffffff;
+}
+
+p{
+    color: #bdbdbd;
+}
+
+a{
+    color: inherit;
+}
+
+img{
+    max-width: 100%;
 }
