@@ -1,430 +1,275 @@
-
 /* =========================
    GLOBAL
 ========================= */
-
-*{
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    margin:0;
-}
-
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;}
 
 /* =========================
    HEADER
 ========================= */
-
 header{
     position:fixed;
     top:0;
     left:0;
-
     width:100%;
-
     z-index:9999;
 }
-
 
 /* =========================
    NAVBAR
 ========================= */
-
 .navbar{
     width:100%;
     min-height:80px;
-
     display:flex;
     align-items:center;
-
     padding:0 28px;
-
     background:rgba(7,10,18,.92);
-
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
-
     border-bottom:1px solid rgba(255,255,255,.08);
 }
-
 
 /* =========================
    LOGO
 ========================= */
-
 .logo{
     color:white;
-
     font-family:'Orbitron',sans-serif;
     font-size:27px;
     font-weight:700;
-
     text-decoration:none;
-
     white-space:nowrap;
-
     flex-shrink:0;
 }
-
 .logo span{
     color:#8B5CF6;
-
     text-shadow:0 0 16px rgba(139,92,246,.9);
 }
-
 
 /* =========================
    NAV LINKS
 ========================= */
-
 .nav-links{
-
-    position:absolute;
-
-    top:80px;
-    right:28px;
-
-    width:280px;
-
-    margin:0;
-    padding:22px;
-
-    flex-direction:column;
-    align-items:stretch;
-
-    gap:6px;
-
-    list-style:none;
-
-    background:#0A0E18;
-
-    border:1px solid rgba(255,255,255,.09);
-
-    border-radius:16px;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.55);
-}
-
-.nav-links.active{
     display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:28px;
+    margin:0 auto;
+    padding:0;
+    list-style:none;
 }
-
-.nav-links li{
-    width:100%;
-}
-
+.nav-links li{width:auto;}
 .nav-links a{
     display:block;
-
-    width:100%;
-
-    padding:12px 15px;
-
     color:white;
-
     font-family:'Poppins',sans-serif;
     font-size:15px;
     font-weight:500;
-
     text-decoration:none;
-
-    border-radius:10px;
-
+    position:relative;
     transition:.25s;
 }
-
-.nav-links a:hover{
-    color:#ffffff;
-
-    background:rgba(139,92,246,.18);
-
-    transform:translateX(3px);
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#8B5CF6;
+    transition:.25s;
 }
-
+.nav-links a:hover{color:#8B5CF6;}
+.nav-links a:hover::after{width:100%;}
 
 /* =========================
    RIGHT MENU
 ========================= */
-
 .right-menu{
     margin-left:auto;
-
     display:flex;
     align-items:center;
     justify-content:flex-end;
-
     gap:10px;
-
-    padding-right:6px;
-
+    padding-right:0;
     position:relative;
 }
-
 
 /* =========================
    BUTTONS
 ========================= */
-
 .download-btn,
 .login-btn{
     min-height:40px;
-
     display:inline-flex;
     align-items:center;
     justify-content:center;
-
     padding:9px 20px;
-
     border-radius:50px;
-
     font-family:'Poppins',sans-serif;
     font-size:14px;
     font-weight:600;
-
     line-height:1;
-
     text-decoration:none;
-
     white-space:nowrap;
-
     cursor:pointer;
-
     transition:.25s;
-
     position:relative;
-
     z-index:2;
 }
-
 .download-btn{
     color:white;
-
     background:transparent;
-
     border:2px solid #8B5CF6;
 }
-
 .download-btn:hover{
     color:white;
-
     background:#8B5CF6;
-
     box-shadow:0 0 24px rgba(139,92,246,.8);
-
     transform:translateY(-2px);
 }
-
 .login-btn{
     color:white;
-
     background:#8B5CF6;
-
     border:2px solid #8B5CF6;
 }
-
 .login-btn:hover{
     color:white;
-
     background:#7447e8;
-
     border-color:#7447e8;
-
     box-shadow:0 0 24px rgba(139,92,246,.75);
-
     transform:translateY(-2px);
 }
-
 
 /* =========================
    MENU ICON
 ========================= */
-
 .menu-toggle{
     width:42px;
     height:42px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
+    margin-left:10px;
     padding:0;
-
     color:white;
-
     background:transparent;
-
     border:none;
-
     font-size:29px;
     line-height:1;
-
     cursor:pointer;
-
     border-radius:9px;
-
     transition:.25s;
-
     position:relative;
-
-    z-index:3;
+    z-index:10001;
 }
-
 .menu-toggle:hover{
     color:#8B5CF6;
-
     background:rgba(255,255,255,.06);
 }
 
+/* =========================
+   DROPDOWN MENU
+========================= */
+.nav-links.active{
+    display:flex;
+    position:absolute;
+    top:80px;
+    right:28px;
+    width:280px;
+    margin:0;
+    padding:22px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:6px;
+    background:#0A0E18;
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:16px;
+    box-shadow:0 20px 50px rgba(0,0,0,.55);
+    z-index:10000;
+}
+.nav-links.active li{width:100%;}
+.nav-links.active a{
+    width:100%;
+    padding:12px 15px;
+    border-radius:10px;
+}
+.nav-links.active a::after{display:none;}
+.nav-links.active a:hover{
+    color:#fff;
+    background:rgba(139,92,246,.18);
+}
 
 /* =========================
    SCROLLED NAVBAR
 ========================= */
-
 .navbar.scrolled{
     min-height:70px;
-
     background:#090d17;
-
     box-shadow:0 12px 35px rgba(0,0,0,.45);
 }
 
-
 /* =========================
-   TABLET
+   TABLET / MOBILE
 ========================= */
-
 @media(max-width:992px){
-
     .navbar{
         min-height:76px;
-
         padding:0 18px;
     }
-
-    .logo{
-        font-size:22px;
+    .logo{font-size:22px;}
+    .nav-links{display:none;}
+    .nav-links.active{
+        display:flex;
+        top:76px;
+        right:14px;
+        width:calc(100% - 28px);
+        max-width:360px;
     }
-
     .right-menu{
         gap:8px;
-
         padding-right:0;
     }
-
-    .download-btn{
-        display:none;
-    }
-
+    .download-btn{display:none;}
     .login-btn{
         min-height:38px;
-
         padding:8px 17px;
-
         font-size:13px;
     }
-
     .menu-toggle{
         width:38px;
         height:38px;
-
+        margin-left:0;
         font-size:27px;
     }
-
-    .nav-links{
-        top:76px;
-        right:14px;
-
-        width:calc(100% - 28px);
-
-        max-width:360px;
-    }
-
 }
 
-
 /* =========================
-   MOBILE
+   SMALL MOBILE
 ========================= */
-
 @media(max-width:480px){
-
     .navbar{
         min-height:70px;
-
         padding:0 12px;
     }
-
-    .logo{
-        font-size:18px;
-    }
-
-    .right-menu{
-        gap:5px;
-    }
-
+    .logo{font-size:18px;}
+    .right-menu{gap:5px;}
     .login-btn{
         min-height:35px;
-
         padding:7px 14px;
-
         font-size:12px;
     }
-
     .menu-toggle{
         width:35px;
         height:35px;
-
         font-size:25px;
     }
-
-    .nav-links{
+    .nav-links.active{
         top:70px;
         right:10px;
-
         width:calc(100% - 20px);
-
         padding:18px;
-    }
-
-}
-/* رجوع القائمة العلوية على الكمبيوتر */
-
-@media (min-width: 993px){
-
-    .nav-links{
-        display:flex !important;
-        position:static !important;
-        width:auto !important;
-        margin:0 auto !important;
-        padding:0 !important;
-
-        flex-direction:row !important;
-        align-items:center !important;
-
-        gap:28px !important;
-
-        background:transparent !important;
-        border:none !important;
-        border-radius:0 !important;
-        box-shadow:none !important;
-    }
-
-    .nav-links li{
-        width:auto !important;
-    }
-
-    .nav-links a{
-        width:auto !important;
-        padding:0 !important;
-        background:transparent !important;
-    }
-
-    .menu-toggle{
-        display:none !important;
     }
 }
