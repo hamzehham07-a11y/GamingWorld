@@ -392,17 +392,39 @@ header{
     }
 
 }
-.nav-links{
-    display:flex !important;
-    position:static !important;
-    flex-direction:row !important;
-    align-items:center;
-    justify-content:center;
-    gap:28px;
-    margin:0 auto;
-    padding:0;
-    width:auto;
-    background:transparent;
-    border:none;
-    box-shadow:none;
+/* رجوع القائمة العلوية على الكمبيوتر */
+
+@media (min-width: 993px){
+
+    .nav-links{
+        display:flex !important;
+        position:static !important;
+        width:auto !important;
+        margin:0 auto !important;
+        padding:0 !important;
+
+        flex-direction:row !important;
+        align-items:center !important;
+
+        gap:28px !important;
+
+        background:transparent !important;
+        border:none !important;
+        border-radius:0 !important;
+        box-shadow:none !important;
+    }
+
+    .nav-links li{
+        width:auto !important;
+    }
+
+    .nav-links a{
+        width:auto !important;
+        padding:0 !important;
+        background:transparent !important;
+    }
+
+    .menu-toggle{
+        display:none !important;
+    }
 }
