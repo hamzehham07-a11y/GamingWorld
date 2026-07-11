@@ -1,83 +1,104 @@
-const navbar = document.querySelector(".navbar");
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+document.addEventListener("DOMContentLoaded", function () {
 
-window.addEventListener("scroll", () => {
-    navbar.classList.toggle("scrolled", window.scrollY > 50);
-});
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const navbar = document.querySelector(".navbar");
+    const scrollTopBtn = document.getElementById("scrollTop");
+    const searchInput = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
 
-menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-const scrollTopBtn = document.getElementById("scrollTop");
+    /* فتح وإغلاق القائمة */
+    if (menuToggle && navLinks) {
 
-window.addEventListener("scroll", () => {
-    scrollTopBtn.classList.toggle("show", window.scrollY > 400);
-});
-
-scrollTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-});
-const searchInput = document.getElementById("searchInput");
-const searchBtn = document.getElementById("searchBtn");
-
-function searchGames() {
-    const searchValue = searchInput.value.trim().toLowerCase();
-
-    const games = document.querySelectorAll(".game-card");
-
-    let found = false;
-
-    games.forEach((game) => {
-        const gameName = game.querySelector("h3").textContent.toLowerCase();
-
-        if (gameName.includes(searchValue)) {
-            game.style.display = "block";
-            found = true;
-        } else {
-            game.style.display = "none";
-        }
-    });
-
-    if (searchValue === "") {
-        games.forEach((game) => {
-            game.style.display = "block";
+        menuToggle.addEventListener("click", function (event) {
+            event.stopPropagation();
+            navLinks.classList.toggle("active");
         });
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+            });
+        });
+
+        document.addEventListener("click", function (event) {
+
+            if (
+                !navLinks.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
+                navLinks.classList.remove("active");
+            }
+
+        });
+
     }
 
-    if (!found && searchValue !== "") {
-        alert("Game not found");
+    /* تغيير شكل النافبار عند النزول */
+    if (navbar) {
+
+        window.addEventListener("scroll", function () {
+
+            if (window.scrollY > 30) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+
+        });
+
     }
-}
 
-searchBtn.addEventListener("click", searchGames);
+    /* زر الرجوع للأعلى */
+    if (scrollTopBtn) {
 
-searchInput.addEventListener("keydown", (event) => {
-    if (event.key === "Enter") {
-        searchGames();
+        window.addEventListener("scroll", function () {
+            scrollTopBtn.classList.toggle("show", window.scrollY > 400);
+        });
+
+        scrollTopBtn.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
     }
-});
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
 
-menuToggle.addEventListener("click", (e) => {
+    /* البحث */
+    function searchGames() {
 
-    e.stopPropagation();
+        if (!searchInput) return;
 
-    navLinks.classList.toggle("active");
+        const searchValue = searchInput.value.trim().toLowerCase();
 
-});
+        if (searchValue.includes("pubg")) {
+            window.location.href = "pubg.html";
+        } else if (
+            searchValue.includes("call of duty") ||
+            searchValue.includes("cod")
+        ) {
+            window.location.href = "callofduty.html";
+        } else if (searchValue.includes("minecraft")) {
+            window.location.href = "minecraft.html";
+        } else if (searchValue !== "") {
+            window.location.href = "games.html";
+        }
 
-document.addEventListener("click", (e) => {
+    }
 
-    if (
-        !navLinks.contains(e.target) &&
-        !menuToggle.contains(e.target)
-    ) {
-        navLinks.classList.remove("active");
+    if (searchBtn && searchInput) {
+
+        searchBtn.addEventListener("click", searchGames);
+
+        searchInput.addEventListener("keydown", function (event) {
+
+            if (event.key === "Enter") {
+                searchGames();
+            }
+
+        });
+
     }
 
 });
