@@ -393,3 +393,81 @@ header{
     }
 
 }
+/* ===== MENU FIX FOR ALL SCREENS ===== */
+
+.nav-links{
+    display:none !important;
+}
+
+.nav-links.active{
+    display:flex !important;
+
+    position:absolute;
+    top:80px;
+    right:25px;
+
+    width:280px;
+
+    margin:0;
+    padding:22px;
+
+    flex-direction:column;
+    align-items:stretch;
+
+    gap:8px;
+
+    list-style:none;
+
+    background:#0A0E18;
+
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:16px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.55);
+
+    z-index:99999;
+}
+
+.nav-links.active li{
+    width:100%;
+}
+
+.nav-links.active a{
+    display:block;
+    width:100%;
+
+    padding:12px 15px;
+
+    color:white;
+    text-decoration:none;
+
+    border-radius:10px;
+}
+
+.nav-links.active a:hover{
+    background:rgba(139,92,246,.2);
+}
+
+.menu-toggle{
+    display:block !important;
+
+    color:white;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    position:relative;
+    z-index:100000;
+}
+
+@media(max-width:600px){
+
+    .nav-links.active{
+        top:70px;
+        right:10px;
+
+        width:calc(100% - 20px);
+    }
+
+}
