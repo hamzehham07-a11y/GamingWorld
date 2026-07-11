@@ -1,340 +1,395 @@
 
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
 header{
     position:fixed;
     top:0;
     left:0;
+
     width:100%;
-    z-index:999;
+
+    z-index:9999;
 }
+
+
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar{
-    grid-template-columns:260px 1fr 520px;
     width:100%;
-    height:80px;
+    min-height:80px;
 
-    display:grid;
-    grid-template-columns:260px 1fr 520px;
+    display:flex;
     align-items:center;
 
-    padding:0 24px;
+    padding:0 28px;
 
-    background:rgba(10,12,20,.85);
+    background:rgba(7,10,18,.92);
+
     backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
     border-bottom:1px solid rgba(255,255,255,.08);
 }
-.nav-links{
-    display:none;
-}
-.right-menu{
-    display:flex;
-    justify-content:flex-end;
-    align-items:center;
-    gap:10px;
-    min-width:0;
-}
 
-.download-btn,
-.login-btn{
-    padding:11px 22px;
-    font-size:14px;
-    font-weight:600;
-    border-radius:50px;
-    white-space:nowrap;
-}
-*{
-    box-sizing:border-box;
-}
-.navbar.scrolled{
 
-    height:70px;
-
-    background:#0A0E18;
-
-    box-shadow:0 10px 35px rgba(0,0,0,.45);
-
-}
+/* =========================
+   LOGO
+========================= */
 
 .logo{
-    font-size:28px;
-    white-space:nowrap;
-}
-.logo span{
-
-    color:#8B5CF6;
-
-    text-shadow:0 0 15px #8B5CF6;
-
-}
-
-.nav-links a{
-
     color:white;
+
+    font-family:'Orbitron',sans-serif;
+    font-size:27px;
+    font-weight:700;
 
     text-decoration:none;
 
-    font-size:16px;
+    white-space:nowrap;
 
-    font-weight:500;
-
-    position:relative;
-
-    transition:.3s;
-
+    flex-shrink:0;
 }
 
-.nav-links a::after{
+.logo span{
+    color:#8B5CF6;
 
-    content:"";
+    text-shadow:0 0 16px rgba(139,92,246,.9);
+}
+
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links{
+    display:none;
 
     position:absolute;
 
-    left:0;
+    top:80px;
+    right:28px;
 
-    bottom:-8px;
+    width:280px;
 
-    width:0;
+    margin:0;
+    padding:22px;
 
-    height:2px;
+    flex-direction:column;
+    align-items:stretch;
 
-    background:#8B5CF6;
+    gap:6px;
 
-    transition:.3s;
+    list-style:none;
 
+    background:#0A0E18;
+
+    border:1px solid rgba(255,255,255,.09);
+
+    border-radius:16px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.55);
+}
+
+.nav-links.active{
+    display:flex;
+}
+
+.nav-links li{
+    width:100%;
+}
+
+.nav-links a{
+    display:block;
+
+    width:100%;
+
+    padding:12px 15px;
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+    font-size:15px;
+    font-weight:500;
+
+    text-decoration:none;
+
+    border-radius:10px;
+
+    transition:.25s;
 }
 
 .nav-links a:hover{
+    color:#ffffff;
 
-    color:#8B5CF6;
+    background:rgba(139,92,246,.18);
 
+    transform:translateX(3px);
 }
 
-.nav-links a:hover::after{
 
-    width:100%;
+/* =========================
+   RIGHT MENU
+========================= */
 
+.right-menu{
+    margin-left:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+
+    gap:10px;
+
+    padding-right:6px;
+
+    position:relative;
 }
 
+
+/* =========================
+   BUTTONS
+========================= */
+
+.download-btn,
+.login-btn{
+    min-height:40px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:9px 20px;
+
+    border-radius:50px;
+
+    font-family:'Poppins',sans-serif;
+    font-size:14px;
+    font-weight:600;
+
+    line-height:1;
+
+    text-decoration:none;
+
+    white-space:nowrap;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    position:relative;
+
+    z-index:2;
+}
 
 .download-btn{
+    color:white;
 
     background:transparent;
 
+    border:2px solid #8B5CF6;
+}
+
+.download-btn:hover{
     color:white;
 
-    border:2px solid #8B5CF6;
+    background:#8B5CF6;
 
+    box-shadow:0 0 24px rgba(139,92,246,.8);
+
+    transform:translateY(-2px);
 }
 
 .login-btn{
-
-    background:#8B5CF6;
-
     color:white;
 
-    border:none;
-
-}
-.download-btn:hover{
-
     background:#8B5CF6;
 
-    transform:translateY(-3px);
-
-    box-shadow:0 0 25px #8B5CF6;
-
+    border:2px solid #8B5CF6;
 }
+
 .login-btn:hover{
+    color:white;
 
-    transform:translateY(-3px);
+    background:#7447e8;
 
-    box-shadow:0 0 25px #8B5CF6;
+    border-color:#7447e8;
 
+    box-shadow:0 0 24px rgba(139,92,246,.75);
+
+    transform:translateY(-2px);
 }
 
 
-.download-btn:hover{
-
-    background:#8B5CF6;
-
-}
-.menu-toggle{
-    display:block;
-    font-size:30px;
-    cursor:pointer;
-    color:#fff;
-}
-
-/* ======================
-Responsive
-====================== */
-
-@media(max-width:992px){
-
-.nav-links{
-
-display:none;
-
-}
-
-.right-menu{
-    display:flex;
-    align-items:center;
-    gap:15px;
-
-    margin-left:40px;
-}
+/* =========================
+   MENU ICON
+========================= */
 
 .menu-toggle{
+    width:42px;
+    height:42px;
 
-display:block;
-
-}
-
-.logo{
-
-font-size:26px;
-
-}
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 15px;
-}
-
-}
-@media(max-width:992px){
-    .nav-links.active{
-        display:flex;
-        position:absolute;
-        top:80px;
-        left:0;
-        width:100%;
-        flex-direction:column;
-        background:#0A0E18;
-        padding:30px;
-        text-align:center;
-        gap:25px;
-    }
-}
-@media(max-width:992px){
-
-    .search-box{
-        display:none;
-    }
-
-    .download-btn{
-        display:none;
-    }
-
-}
-/* ================= SEARCH BOX ================= */
-
-.search-box{
     display:flex;
     align-items:center;
-    width:230px;
-    height:44px;
-    padding-left:16px;
-    border:1px solid rgba(255,255,255,.14);
-    border-radius:50px;
-    background:rgba(255,255,255,.06);
-    overflow:hidden;
-    transition:.3s;
-}
+    justify-content:center;
 
-.search-box:focus-within{
-    border-color:#8B5CF6;
-    box-shadow:0 0 20px rgba(139,92,246,.35);
-}
+    padding:0;
 
-.search-box input{
-    width:100%;
-    border:none;
-    outline:none;
-    background:transparent;
     color:white;
-    font-family:'Poppins',sans-serif;
-    font-size:14px;
-}
 
-.search-box input::placeholder{
-    color:#999;
-}
-
-.search-box button{
-    width:48px;
-    height:44px;
-    border:none;
     background:transparent;
-    color:white;
-    font-size:22px;
+
+    border:none;
+
+    font-size:29px;
+    line-height:1;
+
     cursor:pointer;
-    transition:.3s;
+
+    border-radius:9px;
+
+    transition:.25s;
+
+    position:relative;
+
+    z-index:3;
 }
 
-.search-box button:hover{
+.menu-toggle:hover{
     color:#8B5CF6;
-}
-/* ===== FINAL MOBILE FIX ===== */
 
-@media screen and (max-width: 992px){
+    background:rgba(255,255,255,.06);
+}
+
+
+/* =========================
+   SCROLLED NAVBAR
+========================= */
+
+.navbar.scrolled{
+    min-height:70px;
+
+    background:#090d17;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.45);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
 
     .navbar{
-        display:flex !important;
-        justify-content:space-between !important;
-        align-items:center !important;
-        grid-template-columns:none !important;
-        padding:0 15px !important;
-    }
+        min-height:76px;
 
-    .nav-links{
-        display:none;
+        padding:0 18px;
     }
 
     .logo{
-        font-size:20px !important;
-        flex-shrink:0;
+        font-size:22px;
     }
 
     .right-menu{
-        display:flex;
-        align-items:center;
-        justify-content:flex-end;
         gap:8px;
-        margin-left:auto !important;
-    }
 
-    .search-box{
-        display:none !important;
+        padding-right:0;
     }
 
     .download-btn{
-        display:none !important;
+        display:none;
     }
 
     .login-btn{
-        padding:8px 16px !important;
-        font-size:13px !important;
+        min-height:38px;
+
+        padding:8px 17px;
+
+        font-size:13px;
     }
 
     .menu-toggle{
-        display:block !important;
-        margin-left:8px;
-        font-size:28px;
-        color:white;
+        width:38px;
+        height:38px;
+
+        font-size:27px;
     }
+
+    .nav-links{
+        top:76px;
+        right:14px;
+
+        width:calc(100% - 28px);
+
+        max-width:360px;
+    }
+
 }
-.nav-links.active{
-    display:flex;
-    position:absolute;
-    top:80px;
-    left:0;
-    width:100%;
-    flex-direction:column;
-    align-items:center;
-    gap:25px;
-    padding:30px;
-    background:#0A0E18;
-    border-bottom:1px solid rgba(255,255,255,.08);
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .navbar{
+        min-height:70px;
+
+        padding:0 12px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .right-menu{
+        gap:5px;
+    }
+
+    .login-btn{
+        min-height:35px;
+
+        padding:7px 14px;
+
+        font-size:12px;
+    }
+
+    .menu-toggle{
+        width:35px;
+        height:35px;
+
+        font-size:25px;
+    }
+
+    .nav-links{
+        top:70px;
+        right:10px;
+
+        width:calc(100% - 20px);
+
+        padding:18px;
+    }
+
 }
