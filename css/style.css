@@ -234,3 +234,133 @@ img{
         padding: 22px;
     }
 }
+/* ==========================
+   GAME DETAILS PAGES
+========================== */
+
+.game-page {
+    min-height: 100vh;
+    padding: 130px 7% 70px;
+    background: #070b14;
+    color: #ffffff;
+}
+
+.game-hero {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 40px;
+
+    padding: 30px;
+
+    background: #0a0e18;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+.game-hero img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+
+    border-radius: 15px;
+}
+
+.game-hero-content h1 {
+    margin-bottom: 20px;
+
+    font-size: 48px;
+    color: #00e5ff;
+}
+
+.game-hero-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #cbd5e1;
+}
+
+.game-details {
+    max-width: 1000px;
+    margin: auto;
+
+    padding: 40px;
+
+    background: #0a0e18;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+}
+
+.game-details h2 {
+    margin-top: 30px;
+    margin-bottom: 12px;
+
+    color: #00e5ff;
+}
+
+.game-details h2:first-child {
+    margin-top: 0;
+}
+
+.game-details p {
+    margin-bottom: 20px;
+
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+.game-details .btn {
+    display: inline-block;
+
+    margin-top: 20px;
+    padding: 12px 25px;
+
+    color: #071018;
+    background: #00e5ff;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.game-details .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 229, 255, 0.3);
+}
+
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media screen and (max-width: 768px) {
+
+    .game-page {
+        padding: 110px 20px 50px;
+    }
+
+    .game-hero {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .game-hero img {
+        height: 260px;
+    }
+
+    .game-hero-content h1 {
+        font-size: 34px;
+    }
+
+    .game-details {
+        padding: 25px 20px;
+    }
+}
