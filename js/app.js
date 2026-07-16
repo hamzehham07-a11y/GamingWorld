@@ -181,24 +181,22 @@ async function startFirebaseAuthentication() {
 
 
         /* إعدادات Firebase */
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
 
-  apiKey: "AIzaSyCYHAl_dOrtYyueGNonoRcy9oCE4Fch1dE",
+  apiKey: "AIzaSyAZdjlVCLFUgiKD6Zd4dzTsu6MlxlVpmG4",
 
-  authDomain: "gaming-world-org.firebaseapp.com",
+  authDomain: "gaming-world-login.firebaseapp.com",
 
-  projectId: "gaming-world-org",
+  projectId: "gaming-world-login",
 
-  storageBucket: "gaming-world-org.firebasestorage.app",
+  storageBucket: "gaming-world-login.firebasestorage.app",
 
-  messagingSenderId: "932070061125",
+  messagingSenderId: "400492645961",
 
-  appId: "1:932070061125:web:47df23dc594be00bd09f2c",
-
-  measurementId: "G-MB0PQCM0DR"
+  appId: "1:400492645961:web:d5422a33239fff016eb998"
 
 };
+
 
 
         /* تشغيل Firebase */
