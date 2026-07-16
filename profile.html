@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Gaming World</title>
+
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/navbar.css?v=20">
+    <link rel="stylesheet" href="css/profile.css?v=1">
+
+    <link rel="icon"
+          type="image/png"
+          href="favicon.png">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            Gaming<span>World</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="games.html">Games</a>
+            </li>
+
+            <li>
+                <a href="news.html">News</a>
+            </li>
+
+            <li>
+                <a href="reviews.html">Reviews</a>
+            </li>
+
+            <li>
+                <a href="about.html">About Us</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+        <div class="nav-actions">
+
+            <a href="profile.html"
+               class="login-btn"
+               id="navbarAuthBtn">
+                Profile
+            </a>
+
+            <button class="menu-toggle"
+                    type="button"
+                    aria-label="Open menu">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<main class="profile-page">
+
+    <section class="profile-wrapper">
+
+        <div id="profileLoading"
+             class="profile-loading">
+
+            Loading profile...
+
+        </div>
+
+        <div id="profileContent"
+             class="profile-content hidden">
+
+            <section class="profile-hero">
+
+                <div class="profile-avatar-wrapper">
+
+                    <img id="profilePhoto"
+                         class="profile-avatar"
+                         src="favicon.png"
+                         alt="Profile picture">
+
+                    <span class="online-dot"></span>
+
+                </div>
+
+                <div class="profile-main-info">
+
+                    <span class="profile-label">
+                        GAMING WORLD MEMBER
+                    </span>
+
+                    <h1 id="profileName">
+                        Gaming World User
+                    </h1>
+
+                    <p id="profileEmail">
+                        user@example.com
+                    </p>
+
+                    <p class="profile-uid">
+                        User ID:
+                        <span id="profileUid">
+                            Loading...
+                        </span>
+                    </p>
+
+                </div>
+
+                <button id="logoutBtn"
+                        class="logout-btn"
+                        type="button">
+
+                    Logout
+
+                </button>
+
+            </section>
+
+            <section class="stats-grid">
+
+                <article class="stat-card">
+
+                    <span class="stat-icon">🎮</span>
+
+                    <strong>9</strong>
+
+                    <p>Featured Games</p>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <span class="stat-icon">⭐</span>
+
+                    <strong>0</strong>
+
+                    <p>Favorite Games</p>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <span class="stat-icon">📝</span>
+
+                    <strong>0</strong>
+
+                    <p>Reviews</p>
+
+                </article>
+
+                <article class="stat-card">
+
+                    <span class="stat-icon">📅</span>
+
+                    <strong id="memberSince">
+                        —
+                    </strong>
+
+                    <p>Member Since</p>
+
+                </article>
+
+            </section>
+
+            <section class="profile-grid">
+
+                <article class="profile-card account-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                ACCOUNT
+                            </span>
+
+                            <h2>Account Information</h2>
+
+                        </div>
+
+                        <span class="card-icon">
+                            👤
+                        </span>
+
+                    </div>
+
+                    <div class="info-list">
+
+                        <div class="info-row">
+
+                            <span>Display Name</span>
+
+                            <strong id="accountName">
+                                —
+                            </strong>
+
+                        </div>
+
+                        <div class="info-row">
+
+                            <span>Email Address</span>
+
+                            <strong id="accountEmail">
+                                —
+                            </strong>
+
+                        </div>
+
+                        <div class="info-row">
+
+                            <span>Account Provider</span>
+
+                            <strong id="accountProvider">
+                                —
+                            </strong>
+
+                        </div>
+
+                        <div class="info-row">
+
+                            <span>Last Login</span>
+
+                            <strong id="lastLogin">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <article class="profile-card security-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <span class="section-label">
+                                SECURITY
+                            </span>
+
+                            <h2>Account Status</h2>
+
+                        </div>
+
+                        <span class="card-icon">
+                            🔐
+                        </span>
+
+                    </div>
+
+                    <div class="status-item">
+
+                        <span class="status-dot"></span>
+
+                        <div>
+
+                            <strong>Account Active</strong>
+
+                            <p>
+                                Your account is connected to Gaming World.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="status-item">
+
+                        <span class="status-dot"></span>
+
+                        <div>
+
+                            <strong id="emailStatus">
+                                Email connected
+                            </strong>
+
+                            <p>
+                                Your login information is protected by Firebase.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <section class="profile-card favorite-section">
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            LIBRARY
+                        </span>
+
+                        <h2>Explore Games</h2>
+
+                    </div>
+
+                    <a href="games.html"
+                       class="view-games-btn">
+
+                        View All Games
+
+                    </a>
+
+                </div>
+
+                <div class="favorite-games">
+
+                    <a href="gta.html"
+                       class="mini-game-card">
+
+                        <span>GTA V</span>
+
+                    </a>
+
+                    <a href="pubg.html"
+                       class="mini-game-card">
+
+                        <span>PUBG</span>
+
+                    </a>
+
+                    <a href="minecraft.html"
+                       class="mini-game-card">
+
+                        <span>Minecraft</span>
+
+                    </a>
+
+                    <a href="fortnite.html"
+                       class="mini-game-card">
+
+                        <span>Fortnite</span>
+
+                    </a>
+
+                    <a href="callofduty.html"
+                       class="mini-game-card">
+
+                        <span>Call of Duty</span>
+
+                    </a>
+
+                    <a href="easportsfc26.html"
+                       class="mini-game-card">
+
+                        <span>EA SPORTS FC 26</span>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <div id="profileError"
+             class="profile-error hidden">
+
+            <h2>You need to login first</h2>
+
+            <p>
+                Please login to open your Gaming World profile.
+            </p>
+
+            <a href="login.html"
+               class="profile-login-btn">
+
+                Go to Login
+
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="js/app.js?v=500"></script>
+<script type="module"
+        src="js/profile.js?v=1"></script>
+
+</body>
+</html>
