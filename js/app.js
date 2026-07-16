@@ -181,23 +181,23 @@ async function startFirebaseAuthentication() {
 
 
         /* إعدادات Firebase */
-        const firebaseConfig = {
+       const firebaseConfig = {
 
-            apiKey: "AIzaSyCYHAL_d0rtYyueGNonorRcy9oCE4Fch1dE",
+  apiKey: "AIzaSyCYHAl_dOrtYyueGNonoRcy9oCE4Fch1dE",
 
-            authDomain: "gaming-world-org.firebaseapp.com",
+  authDomain: "gaming-world-org.firebaseapp.com",
 
-            projectId: "gaming-world-org",
+  projectId: "gaming-world-org",
 
-            storageBucket: "gaming-world-org.firebasestorage.app",
+  storageBucket: "gaming-world-org.firebasestorage.app",
 
-            messagingSenderId: "932070061125",
+  messagingSenderId: "932070061125",
 
-            appId: "1:932070061125:web:47df23dc594be00bd09f2c",
+  appId: "1:932070061125:web:47df23dc594be00bd09f2c",
 
-            measurementId: "G-MB0PQCM0DR"
+  measurementId: "G-MB0PQCM0DR"
 
-        };
+};
 
 
         /* تشغيل Firebase */
