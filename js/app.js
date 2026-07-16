@@ -680,8 +680,7 @@ async function startFirebaseAuthentication() {
                         navbarAuthBtn.textContent =
                             "Login";
 
-                        navbarAuthBtn.href =
-                            "login.html";
+                    navbarAuthBtn.href = "profile.html";
 
                         navbarAuthBtn.classList.remove(
                             "user-logged-in"
