@@ -1,100 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login | Gaming World</title>
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:"Poppins",sans-serif;background:#070b14;color:#fff;min-height:100vh}
-    .login-page{min-height:100vh;display:grid;place-items:center;padding:30px 16px;background:
-      radial-gradient(circle at 20% 15%,rgba(55,111,255,.18),transparent 32%),
-      radial-gradient(circle at 85% 85%,rgba(255,106,0,.18),transparent 30%),#070b14}
-    .login-box{width:min(100%,460px);padding:36px;background:rgba(12,18,32,.94);border:1px solid rgba(255,255,255,.09);border-radius:22px;box-shadow:0 25px 70px rgba(0,0,0,.5)}
-    .brand{font-family:"Orbitron",sans-serif;font-size:30px;text-align:center;margin-bottom:8px}
-    .brand span{color:#ff7a00}
-    h2{text-align:center;font-size:25px;margin-bottom:6px}
-    .subtitle{text-align:center;color:#aeb8ca;font-size:14px;margin-bottom:26px}
-    .google-btn,.main-btn,.logout-btn{width:100%;height:52px;border:0;border-radius:12px;font:600 15px "Poppins",sans-serif;cursor:pointer;transition:.2s}
-    .google-btn{background:#fff;color:#111;display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px}
-    .google-btn:hover{transform:translateY(-2px)}
-    .google-icon{font-weight:700;font-size:20px;color:#4285f4}
-    .divider{display:flex;align-items:center;gap:12px;color:#7f8999;font-size:13px;margin:4px 0 20px}
-    .divider::before,.divider::after{content:"";height:1px;flex:1;background:rgba(255,255,255,.1)}
-    .field{margin-bottom:14px}
-    .field label{display:block;font-size:13px;color:#c5cede;margin-bottom:7px}
-    .field input{width:100%;height:50px;border-radius:11px;border:1px solid rgba(255,255,255,.1);background:#0a1020;color:#fff;padding:0 15px;outline:none;font:400 14px "Poppins",sans-serif}
-    .field input:focus{border-color:#3f7cff;box-shadow:0 0 0 3px rgba(63,124,255,.13)}
-    .main-btn{background:linear-gradient(135deg,#2f69ff,#6055ff);color:#fff;margin-top:4px}
-    .main-btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
-    .switch-text{text-align:center;color:#aeb8ca;font-size:14px;margin-top:20px}
-    .switch-text button{border:0;background:none;color:#ff8b2d;font:600 14px "Poppins",sans-serif;cursor:pointer}
-    .back-home{display:block;text-align:center;color:#98a4b8;text-decoration:none;margin-top:22px;font-size:14px}
-    .message{display:none;margin:0 0 16px;padding:11px 13px;border-radius:10px;font-size:13px;line-height:1.5}
-    .message.show{display:block}.message.error{background:rgba(255,70,70,.12);color:#ff9a9a;border:1px solid rgba(255,70,70,.25)}
-    .message.success{background:rgba(70,220,140,.11);color:#98f0be;border:1px solid rgba(70,220,140,.23)}
-    .user-panel{display:none;text-align:center}.user-panel.show{display:block}.auth-panel.hidden{display:none}
-    .avatar{width:82px;height:82px;border-radius:50%;object-fit:cover;border:3px solid #547dff;margin-bottom:13px;background:#111827}
-    .user-email{color:#aeb8ca;font-size:14px;margin:6px 0 22px;word-break:break-word}
-    .logout-btn{background:#ff4f57;color:white}
-    button:disabled{opacity:.6;cursor:not-allowed;transform:none!important}
-    @media(max-width:520px){.login-box{padding:28px 20px}.brand{font-size:25px}}
-  </style>
+    <title>Login | Gaming World</title>
+
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/navbar.css?v=20">
+    <link rel="stylesheet" href="css/cards.css?v=2">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+        .login-box {
+            width: min(420px, 92%);
+        }
+
+        .login-subtitle {
+            color: #aeb6c6;
+            margin-bottom: 20px;
+        }
+
+        .google-login-btn {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 10px;
+            background: #ffffff;
+            color: #111827;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #9098a8;
+            margin: 16px 0;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .message {
+            display: none;
+            margin: 14px 0;
+            padding: 11px;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .message.show {
+            display: block;
+        }
+
+        .message.error {
+            color: #ffb4b4;
+            background: rgba(255, 60, 60, 0.12);
+        }
+
+        .message.success {
+            color: #b8ffd0;
+            background: rgba(40, 200, 100, 0.12);
+        }
+
+        .switch-auth-btn {
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: #ff7a00;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        #userPanel {
+            display: none;
+            text-align: center;
+        }
+
+        #userPanel.show {
+            display: block;
+        }
+
+        #userPhoto {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 12px;
+        }
+
+        #logoutBtn {
+            width: 100%;
+            padding: 13px;
+            margin-top: 18px;
+            border: 0;
+            border-radius: 10px;
+            background: #ff6b00;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
-  <main class="login-page">
-    <section class="login-box">
-      <div class="brand">Gaming<span>World</span></div>
 
-      <div id="authPanel" class="auth-panel">
-        <h2 id="formTitle">Welcome Back</h2>
-        <p id="formSubtitle" class="subtitle">Sign in to continue to your account</p>
+<div class="login-page">
 
-        <div id="message" class="message" role="alert"></div>
+    <div class="login-box">
 
-        <button id="googleBtn" class="google-btn" type="button">
-          <span class="google-icon">G</span>
-          Continue with Google
-        </button>
+        <h1>Gaming<span>World</span></h1>
 
-        <div class="divider">or continue with email</div>
+        <div id="authPanel">
 
-        <form id="authForm">
-          <div class="field">
-            <label for="email">Email address</label>
-            <input id="email" type="email" placeholder="name@example.com" autocomplete="email" required>
-          </div>
+            <h2 id="formTitle">Welcome Back</h2>
 
-          <div class="field">
-            <label for="password">Password</label>
-            <input id="password" type="password" placeholder="At least 6 characters" minlength="6" autocomplete="current-password" required>
-          </div>
+            <p id="formSubtitle" class="login-subtitle">
+                Sign in to continue to your account
+            </p>
 
-          <button id="submitBtn" class="main-btn" type="submit">Login</button>
-        </form>
+            <button id="googleBtn" class="google-login-btn" type="button">
+                Continue with Google
+            </button>
 
-        <p class="switch-text">
-          <span id="switchQuestion">Don't have an account?</span>
-          <button id="switchModeBtn" type="button">Register</button>
-        </p>
-      </div>
+            <div class="divider">OR</div>
 
-      <div id="userPanel" class="user-panel">
-        <img id="userPhoto" class="avatar" src="favicon.png" alt="User profile photo">
-        <h2 id="userName">Welcome</h2>
-        <p id="userEmail" class="user-email"></p>
-        <button id="logoutBtn" class="logout-btn" type="button">Logout</button>
-      </div>
+            <div id="message" class="message"></div>
 
-      <a href="index.html" class="back-home">← Back Home</a>
-    </section>
-  </main>
+            <form id="authForm">
 
-  <script src="app.js?v=4"></script>
+                <input
+                    id="email"
+                    type="email"
+                    placeholder="Email Address"
+                    autocomplete="email"
+                    required
+                >
+
+                <input
+                    id="password"
+                    type="password"
+                    placeholder="Password"
+                    autocomplete="current-password"
+                    minlength="6"
+                    required
+                >
+
+                <button id="submitBtn" type="submit">
+                    Login
+                </button>
+
+            </form>
+
+            <p>
+                <span id="switchQuestion">Don't have an account?</span>
+
+                <button id="switchModeBtn" class="switch-auth-btn" type="button">
+                    Register
+                </button>
+            </p>
+
+        </div>
+
+        <div id="userPanel">
+
+            <img id="userPhoto" src="favicon.png" alt="User">
+
+            <h2 id="userName">Gaming World User</h2>
+
+            <p id="userEmail"></p>
+
+            <button id="logoutBtn" type="button">
+                Logout
+            </button>
+
+        </div>
+
+        <a href="index.html" class="back-home">
+            ← Back Home
+        </a>
+
+    </div>
+
+</div>
+
+<script src="app.js?v=5"></script>
+
 </body>
 </html>
